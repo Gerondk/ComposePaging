@@ -22,7 +22,6 @@ import androidx.paging.compose.collectAsLazyPagingItems
 fun BeersListScreen(onNavigateToDetail: (Int) -> Unit) {
     val viewModel = hiltViewModel<BeersListViewModel>()
     val listPaging  = viewModel.BeersPagingData.collectAsLazyPagingItems()
-    Log.d("Beers", " App Beer")
 
     if ( listPaging.loadState.refresh is LoadState.Loading) {
         Box(

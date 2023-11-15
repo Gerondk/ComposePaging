@@ -22,7 +22,7 @@ import coil.compose.AsyncImage
 @Composable
 fun BeerDetailScreen() {
     val viewModel = hiltViewModel<BeerDetailViewModel>()
-    val beersState by viewModel.beer.collectAsState()
+    val beersState by viewModel.beerUiState.collectAsState()
 
     Box(modifier = Modifier.fillMaxSize()) {
         beersState.beer?.let {
