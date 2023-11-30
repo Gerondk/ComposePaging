@@ -7,6 +7,7 @@ import com.gkp.composepaging.domain.Beer
 import com.gkp.composepaging.domain.GetBeerByIdUseCase
 import com.gkp.composepaging.util.BEER_ID
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.transformLatest
@@ -20,6 +21,7 @@ class BeerDetailViewModel @Inject constructor(
 ) : ViewModel() {
 
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     val beerUiState = stateSavedStateHandle
         .getStateFlow(BEER_ID, INVALID_BEER_ID)
         .transformLatest { id ->
