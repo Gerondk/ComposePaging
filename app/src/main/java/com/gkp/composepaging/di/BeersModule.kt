@@ -18,7 +18,7 @@ object BeersModule {
 
     @Singleton
     @Provides
-    fun providesRetrofit() =
+    fun providesRetrofit(): Retrofit =
         Retrofit
             .Builder()
             .baseUrl(BeerApi.BASE_URL)
@@ -26,7 +26,7 @@ object BeersModule {
             .build()
     @Singleton
     @Provides
-    fun providesBeersApi(retrofit: Retrofit) = retrofit.create(BeerApi::class.java)
+    fun providesBeersApi(retrofit: Retrofit): BeerApi = retrofit.create(BeerApi::class.java)
 
     @Singleton
     @Provides
