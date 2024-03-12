@@ -9,7 +9,7 @@ data class DtoBeer(
     val first_brewed: String,
     val food_pairing: List<String>,
     val id: Int,
-    val image_url: String,
+    val image_url: String?,
     val ingredients: Ingredients,
     val name: String,
     val tagline: String,

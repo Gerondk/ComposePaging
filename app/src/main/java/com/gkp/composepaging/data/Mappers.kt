@@ -7,7 +7,7 @@ fun DtoBeer.toBeer()=
         id = id,
         name = name,
         description = description,
-        imageUrl = image_url,
+        imageUrl = image_url ?: "",
         tagLine = tagline,
         firstBrewed = first_brewed
     )
